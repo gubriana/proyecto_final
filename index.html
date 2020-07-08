@@ -39,7 +39,7 @@
               <option value="iquique">Iquique</option>
               <option value="antofagasta">Antofagasta</option>
               <option value="copiapo">Copiapó</option>
-              <option value="laSerena">La Serena</option>
+              <option value="laSerena" name="La Serena">La Serena</option>
               <option value="valparaiso">Valparaíso</option>
               <option value="santiago">Santiago</option>
               <option value="rancagua">Rancagua</option>
@@ -149,6 +149,9 @@
       //recuperar coordenadas de cada ciudad
       let coor_origen = ciudades[origen];
       let coor_destino = ciudades[destino];
+      
+      const nombre_origen = $('#origen option:selected').html();
+      const nombre_destino = $('#destino option:selected').html();
 
       //recupera tipo de vehiculo
       let vehiculo = $('#vehiculos').val();
@@ -167,7 +170,7 @@
           console.log(consumo);
 
           //ingresar el calculo
-          $('#dato-consumo').html(`Su consumo de combustible será de <b>${consumo}</b> litros.`)
+          $('#dato-consumo').html(`El consumo de combustible de tu auto será de <b>${consumo}</b> litros para ir de ${nombre_origen} a ${nombre_destino} `)
 				})
 				.catch(function(error) {
 					alert(`Error: ${error}`);
