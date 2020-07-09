@@ -166,7 +166,7 @@
             }
 
             class Prius extends Vehiculo {
-              calcular(distancia=10){
+              calcular(){
                 consumo=(distancia/25.6).toFixed(2);
                 console.log(consumo);
                 return consumo;//km en carretera;
@@ -176,7 +176,7 @@
             
 
             class Yuke extends Vehiculo {
-              calcular(distancia=10){
+              calcular(){
                 consumo=(distancia/17.1).toFixed(2);
                 console.log(consumo);
                 return consumo;//km en carretera;
@@ -192,7 +192,7 @@
             }
 
             class A3 extends Vehiculo {
-              calcular(distancia=10){
+              calcular(){
                 consumo=(distancia/10.0).toFixed(2);
                 console.log(consumo);
                 return consumo;//km en carretera;
@@ -208,12 +208,10 @@
           }else if(vehiculo=="alto"){
               const alto = new Alto();
               alto.calcular(consumo);
-          }else(vehiculo=="a3"){
+          }else{
               const a3 = new A3();
               a3.calcular(consumo);
-          }
-           
-          
+          }          
           
           //console.log(consumo);
 
