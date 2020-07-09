@@ -12,16 +12,12 @@
 
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"> <span class="lighten-1"></span></a>
-  </nav>
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
-        <br><br>
-
+        <div class="row center">
+          <h1 class="header col s12 light">Consumo de combustible</h1>
+        </div>
       </div>
     </div>
     <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
@@ -31,9 +27,8 @@
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h1 class="blue-grey-text text-darken-1">Consumo de combustible</h1>
           <form action="" id="combustible" class="blue-grey-text text-darken-1">
-            <select class="browser-default" name="origen" id="origen">
+            <select class="browser-default brown-text text-lighten-3" name="origen" id="origen">
               <option value="" disabled selected>Elije tu ciudad de origen</option>
               <option value="arica">Arica</option>
               <option value="iquique">Iquique</option>
@@ -53,7 +48,7 @@
               <option value="puntaArenas">Punta Arenas</option>
             </select>
             <br>
-            <select class="browser-default" name="destino" id="destino">
+            <select class="browser-default brown-text text-lighten-3" name="destino" id="destino">
               <option value="" disabled selected>Elije tu ciudad de origen</option>
               <option value="arica">Arica</option>
               <option value="iquique">Iquique</option>
@@ -73,7 +68,7 @@
               <option value="puntaArenas">Punta Arenas</option>
             </select>
             <br>
-            <select class="browser-default" name="vehiculos" id="vehiculos">
+            <select class="browser-default brown-text text-lighten-3" name="vehiculos" id="vehiculos" >
               <label for="">Vehículo</label>
               <option value="" disabled selected>Elije tu vehículo</option>
               <option value="prius">Prius</option>
@@ -86,11 +81,11 @@
             <div class="row">
               <div class="col s12 l6">
                 <h4>
-                  <button class="btn waves-effect waves-light left" type="submit" name="action" id="combustible">Calcular consumo<i class="material-icons right">arrow_forward</i></button>
+                  <button class="btn waves-effect waves-light left btn-large" type="submit" name="action" id="combustible">Calcular consumo<i class="material-icons right">arrow_forward</i></button>
                 </h4>
             </div>
               <div class="col s12 l6">
-                <h4 class="Heading blue-grey-text text-darken-1" id="dato-consumo"></h4>
+                <h4 class="Heading blue-grey-text text-darken-1 flow-text" id="dato-consumo"></h4>
               </div>
             </div>
           </form>
@@ -101,7 +96,8 @@
   <footer class="page-footer teal">
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> <br>
+      Image <a class="brown-text text-lighten-3" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>
       </div>
     </div>
   </footer>
@@ -174,7 +170,6 @@
               }
             }
             
-
             class Yuke extends Vehiculo {
               calcular(){
                 consumo=(distancia/17.1).toFixed(2);
@@ -213,19 +208,14 @@
               a3.calcular(consumo);
           }          
           
-          //console.log(consumo);
-
-
           //ingresar el calculo
-          $('#dato-consumo').html(`El consumo de combustible de tu vehículo modelo ${nombre_vehiculo} será de <b>${consumo}</b> litros para ir de ${nombre_origen} a ${nombre_destino} `)
+          $('#dato-consumo').html(`El consumo de combustible de tu vehículo modelo ${nombre_vehiculo} será de <b>${consumo}</b> litros para ir desde ${nombre_origen} hasta ${nombre_destino} `)
 				})
 				.catch(function(error) {
 					alert(`Error: ${error}`);
         });
 
     })
-    
   </script>
-
-  </body>
+</body>
 </html>
