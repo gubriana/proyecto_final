@@ -156,7 +156,7 @@
 				})
 				.then(function(datos_json) {
           let distancia = datos_json.rows[0].elements[0].distance.value/1000;
-
+          
           // creacion clase vehiculos
           let consumo = 0;
             class Vehiculo {
@@ -170,8 +170,10 @@
                 consumo=(distancia/25.6).toFixed(2);
                 console.log(consumo);
                 return consumo;//km en carretera;
+                
               }
             }
+            
 
             class Yuke extends Vehiculo {
               calcular(distancia=10){
@@ -196,8 +198,25 @@
                 return consumo;//km en carretera;
               }
             }
-             debugger
-          console.log(consumo);
+            
+          if(vehiculo=="prius"){
+              const prius = new Prius();
+              prius.calcular(consumo);
+          }else if(vehiculo=="yuke"){
+              const yuke = new Yuke();
+              yuke.calcular(consumo);
+          }else if(vehiculo=="alto"){
+              const alto = new Alto();
+              alto.calcular(consumo);
+          }else(vehiculo=="a3"){
+              const a3 = new A3();
+              a3.calcular(consumo);
+          }
+           
+          
+          
+          //console.log(consumo);
+
 
           //ingresar el calculo
           $('#dato-consumo').html(`El consumo de combustible de tu vehículo modelo ${nombre_vehiculo} será de <b>${consumo}</b> litros para ir de ${nombre_origen} a ${nombre_destino} `)
